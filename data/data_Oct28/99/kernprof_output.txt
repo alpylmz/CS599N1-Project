@@ -1,0 +1,27 @@
+*** PROFILING RESULTS [ms]                                  min        avg        max        lastTime   nSamples   totalTime  ***
+ShootingProblem::calc                                       0.58       0.58       0.58       0.58       1          0.58      
+ShootingProblem::calcDiff                                   1.60       1.67       2.01       1.67       100        166.68    
+SolverDDP::Qu                                               0.00       0.00       0.01       0.00       10000      2.09      
+SolverDDP::Quu                                              0.00       0.00       0.00       0.00       10000      5.85      
+SolverDDP::Quu_inv                                          0.00       0.00       0.01       0.00       10000      5.11      
+SolverDDP::Quu_inv_Qux                                      0.00       0.00       0.01       0.00       10000      10.77     
+SolverDDP::Qx                                               0.00       0.00       0.00       0.00       10000      2.32      
+SolverDDP::Qxu                                              0.00       0.00       0.01       0.00       10000      6.81      
+SolverDDP::Qxx                                              0.00       0.00       0.01       0.00       10000      9.97      
+SolverDDP::backwardPass                                     1.30       1.33       1.42       1.34       100        133.06    
+SolverDDP::calcDiff                                         1.61       1.68       2.43       1.68       100        168.40    
+SolverDDP::computeDirection                                 2.93       3.02       3.83       3.03       100        302.03    
+SolverDDP::computeGains                                     0.00       0.00       0.01       0.00       10000      29.00     
+SolverFDDP::forwardPass                                     0.46       0.49       0.77       0.52       238        115.91    
+SolverIntro::Vx                                             0.00       0.00       0.01       0.00       10000      3.70      
+SolverIntro::Vxx                                            0.00       0.00       0.01       0.00       10000      11.90     
+SolverIntro::calcDiff                                       1.61       1.69       2.43       1.69       100        168.81    
+SolverIntro::computeGains                                   0.00       0.00       0.01       0.00       10000      35.53     
+SolverIntro::solve                                          424.74     424.74     424.74     424.74     1          424.74    
+SolverIntro::solve::calcDerivatives                         0.48       1.19       3.31       0.52       100        118.67    
+SolverIntro::solve::callbacks                               0.02       0.03       0.11       0.02       100        2.62      
+SolverIntro::solve::expectedImprovement                     0.00       0.01       0.07       0.00       100        0.87      
+SolverIntro::solve::loop1                                   424.73     424.73     424.73     424.73     1          424.73    
+SolverIntro::solve::loop2                                   2.93       3.02       3.83       3.03       100        302.12    
+SolverIntro::solve::regularization                          0.00       0.00       0.00       0.00       100        0.03      
+SolverIntro::solve::updatepenaltyparameter                  0.00       0.00       0.00       0.00       100        0.02      
