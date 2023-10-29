@@ -1,0 +1,53 @@
+///////////////////////////////////////////////////////////////////////////////
+// BSD 3-Clause License
+//
+// Copyright (C) 2020-2023, LAAS-CNRS, University of Edinburgh
+//                          Heriot-Watt University
+// Copyright note valid unless otherwise stated in individual files.
+// All rights reserved.
+///////////////////////////////////////////////////////////////////////////////
+#include "crocoddyl/core/activations/quadratic-flat-log.hpp"
+
+#include "python/crocoddyl/core/activation-base.hpp"
+#include "python/crocoddyl/core/core.hpp"
+#include "python/crocoddyl/utils/copyable.hpp"
+
+namespace crocoddyl {
+namespace python {
+
+void exposeActivationQuadFlatLog() {
+  boost::python::register_ptr_to_python<
+      boost::shared_ptr<ActivationModelQuadFlatLog> >();
+
+  bp::class_<ActivationModelQuadFlatLog, bp::bases<ActivationModelAbstract> >(
+      "ActivationModelQuadFlatLog",
+      "Quadratic flat activation model.\n"
+      "A quadratic flat action describes a quadratic flat function that "
+      "depends on the residual, i.e.\n"
+      "log(1 + ||r||^2 / alpha).",
+      bp::init<int, double>(bp::args("self", "nr", "alpha"),
+                            "Initialize the activation model.\n\n"
+                            ":param nr: dimension of the cost-residual vector"
+                            "param alpha: width of quadratic basin near zero"))
+      .def("calc", &ActivationModelQuadFlatLog::calc,
+           bp::args("self", "data", "r"),
+           "Compute the log(1 + ||r||^2 / alpha).\n"
+           ":param data: activation data\n"
+           ":param r: residual vector")
+      .def("calcDiff", &ActivationModelQuadFlatLog::calcDiff,
+           bp::args("self", "data", "r"),
+           "Compute the derivatives of a quadratic flat function.\n"
+           "Note that the Hessian is constant, so we don't write again this "
+           "value.\n"
+           ":param data: activation data\n"
+           ":param r: residual vector \n")
+      .def("createData", &ActivationModelQuadFlatLog::createData,
+           bp::args("self"), "Create the quadratic flat activation data.\n")
+      .add_property(
+          "alpha", bp::make_function(&ActivationModelQuadFlatLog::get_alpha),
+          bp::make_function(&ActivationModelQuadFlatLog::set_alpha), "alpha")
+      .def(CopyableVisitor<ActivationModelQuadFlatLog>());
+}
+
+}  // namespace python
+}  // namespace crocoddyl
