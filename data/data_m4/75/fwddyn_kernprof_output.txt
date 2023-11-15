@@ -1,0 +1,20 @@
+*** PROFILING RESULTS [ms]                                  min        avg        max        lastTime   nSamples   totalTime  ***
+LOOKHERE                                                    0.70       0.72       0.77       0.71       18         12.90     
+ShootingProblem::calc                                       0.84       0.84       0.84       0.84       1          0.84      
+ShootingProblem::calcDiff                                   2.51       2.56       2.76       2.52       16         41.02     
+SolverDDP::Qu                                               0.00       0.00       0.01       0.00       1600       0.34      
+SolverDDP::Quu                                              0.00       0.00       0.00       0.00       1600       1.20      
+SolverDDP::Quu_inv                                          0.00       0.00       0.01       0.00       1600       1.04      
+SolverDDP::Quu_inv_Qux                                      0.00       0.00       0.01       0.00       1600       1.99      
+SolverDDP::Qx                                               0.00       0.00       0.00       0.00       1600       0.45      
+SolverDDP::Qxu                                              0.00       0.00       0.00       0.00       1600       1.52      
+SolverDDP::Qxx                                              0.00       0.00       0.01       0.00       1600       2.41      
+SolverDDP::Vx                                               0.00       0.00       0.00       0.00       1600       0.44      
+SolverDDP::Vxx                                              0.00       0.00       0.00       0.00       1600       1.41      
+SolverDDP::backwardPass                                     1.39       1.41       1.50       1.41       16         22.62     
+SolverDDP::calcDiff                                         2.52       2.63       3.64       2.52       16         42.01     
+SolverDDP::computeDirection                                 3.93       4.04       5.11       3.93       16         64.65     
+SolverDDP::computeGains                                     0.00       0.00       0.08       0.00       1600       5.13      
+SolverDDP::tryStep                                          0.70       0.72       0.78       0.71       18         12.91     
+SolverFDDP::forwardPass                                     0.70       0.72       0.77       0.71       18         12.88     
+SolverFDDP::solve                                           78.10      78.10      78.10      78.10      1          78.10     
